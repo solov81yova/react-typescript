@@ -6,7 +6,7 @@ import Lesson_06 from "lessons/Lesson_06/Lesson_06";
 import Lesson_07 from "lessons/Lesson_07/Lesson_07";
 
 //Consultations
-
+import Consultation_03 from "consultations/Consultation_03/Consultation_03";
 import "./App.css";
 
 function App() {
@@ -14,10 +14,11 @@ function App() {
     <div className="App">
       {/* LESSONS */}
       {/* <Lesson_06 /> */}
-      <Lesson_07 />
+      {/* <Lesson_07 /> */}
       {/* HOMEWORKS */}
       {/* <Homework_06 /> */}
       {/* CONSULTATIONS */}
+      <Consultation_03 />
     </div>
   );
 }
