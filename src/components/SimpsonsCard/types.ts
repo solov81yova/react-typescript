@@ -4,5 +4,4 @@ export interface SimpsonsCardProps {
   avatar: undefined | string;
   job: string;
   hobby?: string;
-  getSimpsonName: () => void;
 }
