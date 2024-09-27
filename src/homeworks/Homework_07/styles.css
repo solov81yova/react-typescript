@@ -1,12 +1,14 @@
 .homework_07-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 50px;
-    gap: 30px;
-  }
-  
-  .title7 {
-    color: rgb(70, 178, 214);
-    font-size: 30px;
-  }
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 50px;
+  gap: 30px;
+}
+
+.title7 {
+  color: #1f27f5;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}

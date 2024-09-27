@@ -1,11 +1,86 @@
+import Input from "components/Input/Input";
 import "./styles.css";
 import Feedback from "components/Feedback/Feedback";
+import Modal from "components/Modal/Modal";
+import SimponsCard from "components/SimpsonsCard/SimpsonsCard";
+import { useState } from "react";
+import Button from "components/Button/Button";
+import LoginForm from "components/LoginForm/LoginForm";
+
+/*
+Скопируйте себе компоненты из моего репозитория react-cohort-42-1: Feedback, Input, LoginForm, SimpsonsCard, Modal. 
+Ссылка на репозиторий будет в слаке в нашей общей группе
+
+Требования:
+
+Покройте компоненты Input, LoginForm, SimpsonsCard, Feedback с помощью TypeScript
+Создайте компонент Homework_07. Импортируйте в него все компоненты перечисленные выше и отобраpите их 
+на странице(расположение на странице на ваше усмотрение)
+Вынесете логику по управлению стейтом из компонента Feedback в компонент Homework_07, 
+т.е компонент Homework_07 должен контролировать состояние компонента Feedback(пример такого поведения мы с вами разбирали с компонентом Counter)
+*/
 
 function Homework_07() {
+  const [likes, setLikes] = useState<number>(0);
+  const [dislikes, setDislikes] = useState<number>(0);
+
+  const onLike = (): void => {
+    setLikes((prevValue: number) => {
+      return prevValue + 1;
+    });
+  };
+
+  const onDislike = (): void => {
+    setDislikes((prevValue: number) => {
+      return prevValue + 1;
+    });
+  };
+
+  const resetResults = (): void => {
+    setLikes(0);
+    setDislikes(0);
+  };
+
   return (
     <div className="homework_07-wrapper">
       <p className="title7">Homework 07</p>
-      <Feedback />
+      <Feedback
+        likes={likes}
+        onLike={onLike}
+        dislikes={dislikes}
+        onDislike={onDislike}
+        resetResults={resetResults}
+      />
+      <LoginForm />
+      <Modal
+        children="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
+      took a galley of type and scrambled it to make a type specimen book."
+      />
+      <SimponsCard
+        firstName="Homer"
+        lastName="Simpson"
+        avatar="https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png"
+        job="Nuclear Safety Inspection"
+        hobby="beer Duff"
+        getSimpsonName={() => {}}
+      />
+      <SimponsCard
+        firstName="Marge"
+        lastName="Simpson"
+        avatar="https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png"
+        job="No job"
+        hobby="cooking"
+        getSimpsonName={() => {}}
+      />
+      <SimponsCard
+        firstName="Bart"
+        lastName="Simpson"
+        avatar="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png"
+        job="No job"
+        hobby="watching TV"
+        getSimpsonName={() => {}}
+      />
     </div>
   );
 }
