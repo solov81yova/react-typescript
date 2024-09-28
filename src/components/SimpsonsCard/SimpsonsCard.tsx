@@ -1,4 +1,5 @@
 import { SimpsonsCardProps } from "./types";
+
 import "./styles.css";
 
 function SimponsCard({
@@ -8,7 +9,7 @@ function SimponsCard({
   job,
   hobby = "No Hobby",
 }: SimpsonsCardProps) {
-  const getSimpsonName = () => {
+  const getSimpsonName = (): string => {
     return `${firstName} ${lastName}`;
   };
 

@@ -1,10 +1,13 @@
-import "./styles.css";
+import { useState } from "react";
+
 import Feedback from "components/Feedback/Feedback";
 import Modal from "components/Modal/Modal";
 import SimponsCard from "components/SimpsonsCard/SimpsonsCard";
-import { useState } from "react";
 import LoginForm from "components/LoginForm/LoginForm";
 import Button from "components/Button/Button";
+import Input from "components/Input/Input";
+
+import "./styles.css";
 
 /*
 Скопируйте себе компоненты из моего репозитория react-cohort-42-1: Feedback, Input, LoginForm, SimpsonsCard, Modal. 
@@ -59,23 +62,27 @@ function Homework_07() {
         resetResults={resetResults}
       />
       <LoginForm />
-      <Modal>
-        <div className="modal-example-container">
-          <h3>Some Title</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-          <Button onClick={closeModal} name="Close Modal" />
-        </div>
-      </Modal>
+      <Button onClick={openModal} name="Open Modal" />
+      {isOpen && (
+        <Modal closeModal={closeModal}>
+          <div className="modal-example-container">
+            <h3>Some Title</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+            <Button onClick={closeModal} name="Close Modal" />
+          </div>
+        </Modal>
+      )}
       <SimponsCard
         firstName="Homer"
         lastName="Simpson"
@@ -96,6 +103,12 @@ function Homework_07() {
         avatar="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png"
         job="No job"
         hobby="watching TV"
+      />
+      <Input
+        id="Input1"
+        name="first_name"
+        placeholder="Enter your first name"
+        label="First name"
       />
     </div>
   );

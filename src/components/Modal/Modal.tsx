@@ -1,5 +1,6 @@
-import "./styles.css";
 import { ModalProps } from "./types";
+
+import "./styles.css";
 
 function Modal({ children }: ModalProps) {
   return (

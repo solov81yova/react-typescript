@@ -1,4 +1,5 @@
 import { ButtonProps } from "./types";
+
 import "./styles.css";
 
 function Button({ type = "button", name, onClick }: ButtonProps) {
