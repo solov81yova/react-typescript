@@ -1,10 +1,12 @@
 // import { useState } from "react";
 
 import Button from "components/Button/Button";
+
 import { CounterProps } from "./types";
-import "./styles.css";
+import { CounterWrapper, ButtonControl, Count } from "./styles";
 
 function Counter({ count, onPlus, onMinus }: CounterProps) {
+  //оставлен комментарий для себя,чтобы понимать как передали управление родительскому компоненту
   // const [count, setCount] = useState<number>(0);
 
   // const onPlus = () => {
@@ -20,15 +22,15 @@ function Counter({ count, onPlus, onMinus }: CounterProps) {
   // };
 
   return (
-    <div className="counter-wrapper">
-      <div className="button-control">
+    <CounterWrapper>
+      <ButtonControl>
         <Button name="-" onClick={onMinus} />
-      </div>
-      <p className="count">{count}</p>
-      <div className="button-control">
+      </ButtonControl>
+      <Count>{count}</Count>
+      <ButtonControl>
         <Button name="+" onClick={onPlus} />
-      </div>
-    </div>
+      </ButtonControl>
+    </CounterWrapper>
   );
 }
 

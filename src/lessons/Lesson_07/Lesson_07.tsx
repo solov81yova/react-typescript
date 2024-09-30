@@ -1,4 +1,4 @@
-import "./styles.css";
+import { Lesson_07Wrapper, Lesson07ButtonControl } from "./styles";
 import Button from "components/Button/Button";
 import Counter from "components/Counter/Counter";
 import { useState } from "react";
@@ -79,7 +79,7 @@ function Lesson_07() {
     });
   };
   return (
-    <div className="lesson_07-wrapper">
+    <Lesson_07Wrapper>
       <Counter count={count} onPlus={onPlus} onMinus={onMinus} />
       <Button
         name="Send"
@@ -87,7 +87,7 @@ function Lesson_07() {
           console.log(`Counter ${count} sent to server successfully`);
         }}
       />
-    </div>
+    </Lesson_07Wrapper>
   );
 }
 export default Lesson_07;
