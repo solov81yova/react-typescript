@@ -1,10 +1,11 @@
-import "./styles.css";
+import { Homework_07Wrapper, Title7 } from "./styles";
 import Feedback from "components/Feedback/Feedback";
 import Modal from "components/Modal/Modal";
 import SimponsCard from "components/SimpsonsCard/SimpsonsCard";
 import { useState } from "react";
 import LoginForm from "components/LoginForm/LoginForm";
 import Button from "components/Button/Button";
+import Input from "components/Input/Input";
 
 /*
 Скопируйте себе компоненты из моего репозитория react-cohort-42-1: Feedback, Input, LoginForm, SimpsonsCard, Modal. 
@@ -49,8 +50,8 @@ function Homework_07() {
   };
 
   return (
-    <div className="homework_07-wrapper">
-      <p className="title7">Homework 07</p>
+    <Homework_07Wrapper>
+      <Title7>Homework 07</Title7>
       <Feedback
         likes={likes}
         onLike={onLike}
@@ -59,23 +60,27 @@ function Homework_07() {
         resetResults={resetResults}
       />
       <LoginForm />
-      <Modal>
-        <div className="modal-example-container">
-          <h3>Some Title</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-          <Button onClick={closeModal} name="Close Modal" />
-        </div>
-      </Modal>
+      <Button onClick={openModal} name="Open Modal" />
+      {isOpen && (
+        <Modal>
+          <div className="modal-example-container">
+            <h3>Some Title</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+            <Button onClick={closeModal} name="Close Modal" />
+          </div>
+        </Modal>
+      )}
       <SimponsCard
         firstName="Homer"
         lastName="Simpson"
@@ -97,7 +102,13 @@ function Homework_07() {
         job="No job"
         hobby="watching TV"
       />
-    </div>
+      <Input
+        id="Input"
+        label="First name"
+        placeholder="Enter your first name"
+        name="first name"
+      />
+    </Homework_07Wrapper>
   );
 }
 export default Homework_07;

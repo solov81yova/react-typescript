@@ -1,4 +1,4 @@
-import "./styles.css";
+import { Lesson_06Wrapper } from "./styles";
 
 function Lesson_06() {
   // 1 ТИП: string - строковый("", '', ``);
@@ -146,6 +146,6 @@ function Lesson_06() {
   const languages: ArrayGeneration<string> = ["English", "Russian", "Spanish"];
   const prices: ArrayGeneration<number> = [1000, 500, 400];
 
-  return <div className="lesson_06-wrapper">Lesson_06</div>;
+  return <Lesson_06Wrapper>Lesson_06</Lesson_06Wrapper>;
 }
 export default Lesson_06;

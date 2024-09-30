@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import "./styles.css";
+import { Homework_06Wrapper, Title6, CardWrapper, CardItem } from "./styles";
 /*
 Создайте компонент Homework_06
 В нем нужно протипизировать следующий массив обьектов:
@@ -48,19 +48,19 @@ function Homework_06() {
 
   const carsCards = cars.map((car: Car) => {
     return (
-      <div key={v4()} className="card-wrapper">
-        <p className="card-item">Brand:{car.brand}</p>
-        <p className="card-item">Price:{car.price}</p>
-        <p className="card-item">isDiesel:{car.isDiesel ? "true" : "false"}</p>
-      </div>
+      <CardWrapper key={v4()}>
+        <CardItem>Brand:{car.brand}</CardItem>
+        <CardItem>Price:{car.price}</CardItem>
+        <CardItem>isDiesel:{car.isDiesel ? "true" : "false"}</CardItem>
+      </CardWrapper>
     );
   });
 
   return (
-    <div className="homework_06-wrapper">
-      <p className="title">Homework 06</p>
+    <Homework_06Wrapper>
+      <Title6>Homework 06</Title6>
       {carsCards}
-    </div>
+    </Homework_06Wrapper>
   );
 }
 export default Homework_06;
