@@ -35,7 +35,7 @@ function Homework_08() {
       <ButtonControl>
         <Button
           isDeleteVariant={false}
-          name="Delete Button"
+          name="Button"
           onClick={() => {}}
         />
       </ButtonControl>

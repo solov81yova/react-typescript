@@ -29,7 +29,7 @@ export const InputComponent = styled.input<InputComponentStyleProps>`
       : "white"}; ;
 `;
 
-export const InputComponentForPlaceholder = styled.details`
+export const InputComponentForPlaceholder = styled.div`
   color: #6f6f6f;
   font-size: 16px;
 `;

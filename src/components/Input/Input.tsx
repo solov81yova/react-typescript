@@ -13,7 +13,7 @@ function Input({
   placeholder,
   label,
   disabled = false,
-  error = "",
+  error = undefined,
 }: InputProps) {
   return (
     <InputWrapper>
