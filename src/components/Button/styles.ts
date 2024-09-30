@@ -4,7 +4,6 @@ import { colors } from "styles/colors";
 
 interface ButtonComponentStyleProps {
   $isDeleteVariant: boolean;
-  disabled: boolean;
 }
 
 export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
@@ -18,5 +17,5 @@ export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
   border-radius: 4px;
   background-color: ${({ $isDeleteVariant, disabled }) =>
     disabled ? "grey" : $isDeleteVariant ? colors.ERROR : colors.PRIMARY_BLUE};
-  cursor: ${({ disabled }) => (disabled ? "none" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
