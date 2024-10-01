@@ -2,7 +2,6 @@ import {
   InputWrapper,
   InputLabel,
   InputComponent,
-  InputComponentForPlaceholder,
 } from "./styles";
 import { InputProps } from "./types";
 
@@ -14,6 +13,8 @@ function Input({
   label,
   disabled = false,
   error = undefined,
+  value,
+  onChange,
 }: InputProps) {
   return (
     <InputWrapper>
@@ -25,6 +26,8 @@ function Input({
         placeholder={placeholder}
         disabled={disabled}
         $error={error}
+        value={value}
+        onChange={onChange}
       />
     </InputWrapper>
   );

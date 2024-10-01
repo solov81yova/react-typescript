@@ -1,4 +1,4 @@
-import "./styles.css";
+import { Consultation_03Wrapper } from "./styles";
 import { useState } from "react";
 import Button from "components/Button/Button";
 
@@ -12,9 +12,9 @@ function Consultation_03() {
   console.log(count);
 
   return (
-    <div className="consultation_03-wrapper">
+    <Consultation_03Wrapper>
       <Button name="Add" onClick={onAdd} />
-    </div>
+    </Consultation_03Wrapper>
   );
 }
 

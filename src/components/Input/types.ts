@@ -1,3 +1,5 @@
+import { HTMLInputTypeAttribute } from "react";
+
 export interface InputProps {
   id: string;
   name: string;
@@ -6,4 +8,6 @@ export interface InputProps {
   label: string;
   disabled?: boolean;
   error?: undefined | string;
+  value?: string;
+  onChange?: any;
 }
