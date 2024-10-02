@@ -18,4 +18,8 @@ export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
   background-color: ${({ $isDeleteVariant, disabled }) =>
     disabled ? "grey" : $isDeleteVariant ? colors.ERROR : colors.PRIMARY_BLUE};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+
+  &:hover {
+    background-color: rgb(61 61 116);
+  }
 `;
