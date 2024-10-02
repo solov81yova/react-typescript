@@ -21,12 +21,8 @@ function Homework_09() {
     setJoke(undefined);
     setError(undefined);
 
-    try {
       const response = await fetch(
-        "https://official-joke-api.appspot.com/random_joke",
-        {
-          method: "GET",
-        }
+        "https://official-joke-api.appspot.com/random_joke"
       );
       const result = await response.json();
 
@@ -35,9 +31,6 @@ function Homework_09() {
       } else {
         setError("Error during request");
       }
-    } catch (error) {
-      setError(`Something went wrong: ${error}`);
-    }
   };
 
   useEffect(() => {
