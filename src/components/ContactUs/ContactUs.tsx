@@ -32,10 +32,8 @@ function ContactUs() {
     validationSchema: validationSchema,
     validateOnMount: false,
     validateOnChange: false,
-    onSubmit: (values, helpers) => {
-      console.log("Request works");
+    onSubmit: (values) => {
       console.log(values);
-      console.log(helpers);
     },
   });
 
