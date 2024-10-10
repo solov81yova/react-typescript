@@ -19,7 +19,11 @@ function Layout({ children }: LayoutProps) {
   const goToHomePage = () => {
     navigate("/");
   };
-
+  const goToWebsite = () => {
+    navigate("/google");
+    navigate("/gmail");
+    navigate("/edge");
+  };
   return (
     <LayoutWrapper>
       <AppHeader>
@@ -61,6 +65,16 @@ function Layout({ children }: LayoutProps) {
           >
             Login
           </HeaderLink>
+          <HeaderLink
+            onClick={goToWebsite}
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/clients"
+          >
+            Clients
+          </HeaderLink>
         </HeaderNav>
       </AppHeader>
       <AppMain>{children}</AppMain>
@@ -71,6 +85,7 @@ function Layout({ children }: LayoutProps) {
           <FooterLink to="/contactUs">Contact Us</FooterLink>
           <FooterLink to="/about">About</FooterLink>
           <FooterLink to="/login">Login</FooterLink>
+          <FooterLink to="/clients">Clients</FooterLink>
         </FooterNav>
       </AppFooter>
     </LayoutWrapper>

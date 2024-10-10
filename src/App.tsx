@@ -6,6 +6,10 @@ import Home from "pages/UserApp/Home/Home";
 import About from "pages/UserApp/About/About";
 import ContactUsPage from "pages/UserApp/ContacUsPage/ContactUsPage";
 import Login from "pages/UserApp/Login/Login";
+import Google from "pages/Clients/Google/Google";
+import Gmail from "pages/Clients/Gmail/Gmail";
+import Edge from "pages/Clients/Edge/Edge";
+
 
 // HOMEWORKS
 import Homework_06 from "homeworks/Homework_06/Homework_06";
@@ -25,6 +29,7 @@ import Consultation_03 from "consultations/Consultation_03/Consultation_03";
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -35,6 +40,10 @@ function App() {
           <Route path="/about" element={<About/>}/>
           <Route path="/contactUs" element={<ContactUsPage/>}/>
           <Route path="/login" element={<Login/>}/>
+          
+          <Route path="/clients/google" element={<Google/>}/>
+          <Route path="/clients/gmail" element={<Gmail/>}/>
+          <Route path="/clients/edge" element={<Edge/>}/>
         </Routes>
       </Layout>
       {/* LESSONS */}
