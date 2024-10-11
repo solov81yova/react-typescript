@@ -12,6 +12,7 @@ import {
   FooterNav,
 } from "./styles";
 import { LayoutProps } from "./types";
+import Clients from "pages/Clients/Clients";
 
 function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
@@ -74,6 +75,7 @@ function Layout({ children }: LayoutProps) {
             to="/clients"
           >
             Clients
+            {/* <Clients></Clients> */}
           </HeaderLink>
         </HeaderNav>
       </AppHeader>
