@@ -10,6 +10,7 @@ import Google from "pages/Clients/Google/Google";
 import Gmail from "pages/Clients/Gmail/Gmail";
 import Edge from "pages/Clients/Edge/Edge";
 import Clients from "pages/Clients/Clients";
+import { APP_ROUTES } from "constans/routes";
 
 // HOMEWORKS
 import Homework_06 from "homeworks/Homework_06/Homework_06";
@@ -33,14 +34,14 @@ function App() {
       <GlobalStyles />
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contactUs" element={<ContactUsPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/clients/google" element={<Google />} />
-          <Route path="/clients/gmail" element={<Gmail />} />
-          <Route path="/clients/edge" element={<Edge />} />
+          <Route path={APP_ROUTES.HOME} element={<Home />} />
+          <Route path={APP_ROUTES.ABOUT} element={<About />} />
+          <Route path={APP_ROUTES.CONTACT_US} element={<ContactUsPage />} />
+          <Route path={APP_ROUTES.LOGIN} element={<Login />} />
+          <Route path={APP_ROUTES.CLIENTS} element={<Clients />} />
+          <Route path={APP_ROUTES.GOOGLE} element={<Google />} />
+          <Route path={APP_ROUTES.GMAIL} element={<Gmail />} />
+          <Route path={APP_ROUTES.EDGE} element={<Edge />} />
         </Routes>
       </Layout>
       {/* LESSONS */}
