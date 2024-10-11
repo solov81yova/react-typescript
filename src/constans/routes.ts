@@ -3,4 +3,8 @@ export enum APP_ROUTES {
   ABOUT = "/about",
   CONTACT_US = "/contactUs",
   LOGIN = "/login",
+  CLIENTS = "/clients",
+  GOOGLE = "/clients/google",
+  GMAIL = "/clients/gmail",
+  EDGE = "/clients/edge",
 }

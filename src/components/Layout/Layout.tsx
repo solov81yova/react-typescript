@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { APP_ROUTES } from "constans/routes";
+
 import {
   LayoutWrapper,
   AppHeader,
@@ -21,7 +23,7 @@ function Layout({ children }: LayoutProps) {
   const goToHomePage = () => {
     navigate(APP_ROUTES.HOME);
   };
-
+  
   return (
     <LayoutWrapper>
       <AppHeader>
@@ -63,6 +65,15 @@ function Layout({ children }: LayoutProps) {
           >
             Login
           </HeaderLink>
+          <HeaderLink
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to={APP_ROUTES.CLIENTS}
+          >
+            Clients
+          </HeaderLink>
         </HeaderNav>
       </AppHeader>
       <AppMain>{children}</AppMain>
@@ -73,6 +84,7 @@ function Layout({ children }: LayoutProps) {
           <FooterLink to={APP_ROUTES.CONTACT_US}>Contact Us</FooterLink>
           <FooterLink to={APP_ROUTES.ABOUT}>About</FooterLink>
           <FooterLink to={APP_ROUTES.LOGIN}>Login</FooterLink>
+          <FooterLink to={APP_ROUTES.CLIENTS}>Clients</FooterLink>
         </FooterNav>
       </AppFooter>
     </LayoutWrapper>
