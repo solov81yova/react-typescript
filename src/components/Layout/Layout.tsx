@@ -14,6 +14,8 @@ import {
   FooterNav,
 } from "./styles";
 import { LayoutProps } from "./types";
+import { APP_ROUTES } from "constans/routes";
+import App from "App";
 
 function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
