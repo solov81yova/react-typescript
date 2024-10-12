@@ -7,4 +7,5 @@ export enum APP_ROUTES {
   GOOGLE = "/clients/google",
   GMAIL = "/clients/gmail",
   EDGE = "/clients/edge",
+  NOT_FOUND = "*",
 }

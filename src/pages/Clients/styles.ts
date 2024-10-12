@@ -13,3 +13,8 @@ export const PageTitle = styled.p`
 export const Page = styled(Link)`
   font-size: 20px;
 `;
+export const NavContainer = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;

@@ -3,18 +3,16 @@ import styled from "@emotion/styled";
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
+  gap: 30px;
 `;
 
-export const PageTitle = styled.p`
-  font-size: 30px;
-  font-weight: bold;
+export const Description = styled.p`
+  font-size: 24px;
 `;
+
 export const ButtonControl = styled.div`
   width: 300px;
-`;
-export const Text = styled.p`
-  font-size: 18px;
-  text-align: justify;
 `;
 export const TextContainer = styled.form`
   display: flex;

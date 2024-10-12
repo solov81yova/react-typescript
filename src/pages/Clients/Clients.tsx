@@ -1,24 +1,14 @@
-import { PageTitle, PageWrapper, Page } from "./styles";
+import { PageTitle, PageWrapper, Page, NavContainer } from "./styles";
 
 function Clients() {
   return (
     <PageWrapper>
       <PageTitle>Clients</PageTitle>
-      <ul>
-        <li>
-          <Page to="/clients/google">Google</Page>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Page to="/clients/gmail">Gmail</Page>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Page to="/clients/edge">Edge</Page>
-        </li>
-      </ul>
+      <NavContainer>
+        <Page to="/clients/google">Google</Page>
+        <Page to="/clients/gmail">Gmail</Page>
+        <Page to="/clients/edge">Edge</Page>
+      </NavContainer>
     </PageWrapper>
   );
 }
