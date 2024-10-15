@@ -31,6 +31,7 @@ import Lesson_13 from "lessons/Lesson_13/Lesson_13";
 
 //CONSULTATIONS
 import Consultation_03 from "consultations/Consultation_03/Consultation_03";
+import EmployeeApp from "pages/EmployeeApp/EmployeeApp";
 
 
 function App() {
@@ -63,7 +64,8 @@ function App() {
       {/* <Homework_08/> */}
       {/* <Homework_09/> */}
       {/* <Homework_11 /> */}
-      <Homework_13/>
+      {/* <Homework_13/> */}
+      <EmployeeApp/>
       {/* CONSULTATIONS */}
       {/* <Consultation_03 /> */}
     </BrowserRouter>
