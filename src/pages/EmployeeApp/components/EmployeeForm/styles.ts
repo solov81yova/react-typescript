@@ -15,12 +15,6 @@ export const EmployeeFormContainer = styled.form`
   left: 435px;
 `;
 
-// export const Title = styled.p`
-//   color: #000000;
-//   font-size: 24px;
-//   font-weight: normal;
-// `;
-
 export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;

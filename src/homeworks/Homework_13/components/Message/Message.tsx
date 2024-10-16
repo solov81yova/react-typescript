@@ -10,11 +10,10 @@ function Message() {
   return (
     <MessageWrapper>
       <MessageTitle>published the post:</MessageTitle>
-      {postData && (
-        <>
-          <MessageInfo>{postData.post}</MessageInfo>
-        </>
-      )}
+      
+          <MessageInfo>{postData}</MessageInfo>
+        
+      
     </MessageWrapper>
   );
 }

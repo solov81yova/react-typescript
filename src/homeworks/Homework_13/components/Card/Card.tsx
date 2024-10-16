@@ -5,7 +5,7 @@ import { CardWrapper, CardItem } from "./styles";
 function Card() {
   return (
     <CardWrapper>
-      <CardItem>Yuliia Soloviova</CardItem>
+      <CardItem>Johny Depp</CardItem>
       <Message />
     </CardWrapper>
   );

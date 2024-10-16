@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const BlogContainer = styled.form`
+export const BlogWrapper = styled.form`
   display: flex;
   flex-direction: column;
   width: 590px;

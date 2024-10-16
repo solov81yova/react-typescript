@@ -12,6 +12,7 @@ import Edge from "pages/Clients/Edge/Edge";
 import Clients from "pages/Clients/Clients";
 
 import { APP_ROUTES } from "constans/routes";
+import { EMPLOYEE_APP_ROUTES } from "pages/EmployeeApp/components/EmployeeLayout/types";
 
 // HOMEWORKS
 import Homework_06 from "homeworks/Homework_06/Homework_06";
@@ -32,6 +33,8 @@ import Lesson_13 from "lessons/Lesson_13/Lesson_13";
 //CONSULTATIONS
 import Consultation_03 from "consultations/Consultation_03/Consultation_03";
 import EmployeeApp from "pages/EmployeeApp/EmployeeApp";
+import EmployeeLayout from "pages/EmployeeApp/components/EmployeeLayout/EmployeeLayout";
+import EmployeeForm from "pages/EmployeeApp/components/EmployeeForm/EmployeeForm";
 
 
 function App() {
@@ -51,6 +54,13 @@ function App() {
           <Route path={APP_ROUTES.NOT_FOUND} element="Page not found"/>
         </Routes>
       </Layout> */}
+      {/* <EmployeeLayout>
+        <Routes>
+        <Route path={EMPLOYEE_APP_ROUTES.CREATE_EMPLOYEE} element={<EmployeeForm />} />
+        {/* <Route path={EMPLOYEE_APP_ROUTES.EMPLOYEES} element={<Employees />} /> */}
+        {/* </Routes>
+
+      </EmployeeLayout> */}
       {/* LESSONS */}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
@@ -64,8 +74,8 @@ function App() {
       {/* <Homework_08/> */}
       {/* <Homework_09/> */}
       {/* <Homework_11 /> */}
-      {/* <Homework_13/> */}
-      <EmployeeApp/>
+      <Homework_13/>
+      {/* <EmployeeApp/> */}
       {/* CONSULTATIONS */}
       {/* <Consultation_03 /> */}
     </BrowserRouter>

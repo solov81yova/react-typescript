@@ -1,39 +1,43 @@
-import { useState, createContext, ChangeEvent, MouseEvent } from "react";
+import { useState, createContext, ChangeEvent, FormEvent } from "react";
 
 import Card from "homeworks/Homework_13/components/Card/Card";
 import Button from "components/Button/Button";
 
-import { BlogContainer, Title, TextAreaContainer, TextArea } from "./styles";
-import { PostData } from "./types";
+import { BlogWrapper, Title, TextAreaContainer, TextArea } from "./styles";
 
-export const PostContext = createContext<PostData | undefined>(undefined);
+export const PostContext = createContext<string>("");
 
 function BlogManagement() {
-  const [postData, setPostData] = useState<undefined | PostData>(undefined);
+  const [postData, setPostData] = useState<string>("");
   const [inputTextValue, setInputTextValue] = useState<string>("");
 
   const onChangePost = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setInputTextValue(event.target.value);
   };
 
-  const getPostData = (event: MouseEvent<HTMLButtonElement>) => {
+  const getPostData = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (inputTextValue !== "") {
-      setPostData({ post: inputTextValue });
+      setPostData(inputTextValue);
       setInputTextValue("");
     }
   };
 
   return (
     <PostContext.Provider value={postData}>
-      <BlogContainer>
+      <BlogWrapper onSubmit={getPostData}>
         <Title>Write your post</Title>
         <TextAreaContainer>
-          <TextArea value={inputTextValue} onChange={onChangePost} />
+          <TextArea
+            name="post"
+            value={inputTextValue}
+            placeholder="Enter your message to post"
+            onChange={onChangePost}
+          />
         </TextAreaContainer>
-        <Button type="submit" name="Crate post" onClick={getPostData} />
+        <Button type="submit" name="Crate post" />
         {postData && <Card />}
-      </BlogContainer>
+      </BlogWrapper>
     </PostContext.Provider>
   );
 }
