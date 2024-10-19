@@ -1,61 +1,46 @@
-import { useNavigate } from "react-router-dom";
-import {v4} from "uuid";
+import { useState, createContext } from "react";
 
-// import { APP_ROUTES } from "constans/routes";
-import { UserImg } from "assets";
-import { EMPLOYEE_APP_ROUTES } from "./types";
-
+import { LayoutProps, UserDataProps, EmployeeContextState } from "pages/EmployeeApp/types";
+import { EMPLOYEE_APP_ROUTES } from "constans/routes";
 
 import {
   LayoutWrapper,
   AppHeader,
-  AppMain,
   HeaderLink,
-  HeaderNav,
   HeaderLogo,
-  LogoImg
+  HeaderNav,
+  AppMain,
 } from "./styles";
-import { EmployeeLayoutProps } from "./types";
+export const EmployeeContext = createContext<EmployeeContextState>({
+  userData: [],
+  setUserData: () => {},
+});
 
-function EmployeeLayout({ children }: EmployeeLayoutProps) {
-  const navigate = useNavigate();
-
-  const goToHomePage = () => {
-    navigate(EMPLOYEE_APP_ROUTES.CREATE_EMPLOYEE);
-  };
-  const appLinks = {
-    [EMPLOYEE_APP_ROUTES.CREATE_EMPLOYEE]: "Create Employee",
-    [EMPLOYEE_APP_ROUTES.EMPLOYEES]: "Employees",
-    
-  };
-  const headerLinks = Object.keys(appLinks).map((link: string) => {
-    return (
-      <HeaderLink
-        key={v4()}
-        style={({ isActive }) => ({
-          fontWeight: isActive ? "bold" : "normal",
-          textDecoration: isActive ? "underline" : "none",
-        })}
-        to={link}
-      >
-        {appLinks[link as keyof typeof appLinks]}
-      </HeaderLink>
-    );
-  });
-
-  
+function EmployeeLayout({ children }: LayoutProps) {
+  const [userData, setUserData] = useState<UserDataProps[]>([]);
+  console.log(userData)
 
   return (
-    <LayoutWrapper>
-      <AppHeader>
-        <HeaderLogo onClick={goToHomePage}>
-          <LogoImg src={UserImg} alt="Logo" />
-        </HeaderLogo>
-        <HeaderNav>{headerLinks}</HeaderNav>
-      </AppHeader>
-      <AppMain>{children}</AppMain>
-     
-    </LayoutWrapper>
+    <EmployeeContext.Provider value={{ userData, setUserData }}>
+      <LayoutWrapper>
+        <AppHeader>
+          <HeaderLogo
+            src="https://www.365akademie.de/wp-content/uploads/2022/11/Microsoft-365-Apps-Logo-1.png"
+            alt="App Logo"
+          />
+          <HeaderNav>
+            <HeaderLink to={EMPLOYEE_APP_ROUTES.CREATE_EMPLOYEE}>
+              Create Employee
+            </HeaderLink>
+
+            <HeaderLink to={EMPLOYEE_APP_ROUTES.EMPLOYEES}>
+              Employees
+            </HeaderLink>
+          </HeaderNav>
+        </AppHeader>
+        <AppMain>{children}</AppMain>
+      </LayoutWrapper>
+    </EmployeeContext.Provider>
   );
 }
 

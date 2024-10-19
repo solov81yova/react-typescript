@@ -33,9 +33,6 @@ import Lesson_13 from "lessons/Lesson_13/Lesson_13";
 //CONSULTATIONS
 import Consultation_03 from "consultations/Consultation_03/Consultation_03";
 import EmployeeApp from "pages/EmployeeApp/EmployeeApp";
-import EmployeeLayout from "pages/EmployeeApp/components/EmployeeLayout/EmployeeLayout";
-import EmployeeForm from "pages/EmployeeApp/components/EmployeeForm/EmployeeForm";
-
 
 function App() {
   return (
@@ -58,7 +55,7 @@ function App() {
         <Routes>
         <Route path={EMPLOYEE_APP_ROUTES.CREATE_EMPLOYEE} element={<EmployeeForm />} />
         {/* <Route path={EMPLOYEE_APP_ROUTES.EMPLOYEES} element={<Employees />} /> */}
-        {/* </Routes>
+      {/* </Routes>
 
       </EmployeeLayout> */}
       {/* LESSONS */}
@@ -74,8 +71,8 @@ function App() {
       {/* <Homework_08/> */}
       {/* <Homework_09/> */}
       {/* <Homework_11 /> */}
-      <Homework_13/>
-      {/* <EmployeeApp/> */}
+      {/* <Homework_13/> */}
+      <EmployeeApp />
       {/* CONSULTATIONS */}
       {/* <Consultation_03 /> */}
     </BrowserRouter>
